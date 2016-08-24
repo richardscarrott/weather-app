@@ -5,12 +5,17 @@ const express = require('express');
 const compression = require('compression');
 const debug = require('debug')('app');
 const colors = require('colors/safe');
+const morgan = require('morgan');
 const api = require('./routes/api');
 const app = express();
 
 app.set('port', config.PORT || 6060);
 
 app.use(compression());
+
+if (config.NODE_ENV !== 'production') {
+    app.use(morgan('dev'));
+}
 
 app.use('/api', api);
 

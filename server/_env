@@ -20,3 +20,6 @@ BROWSER_CACHE=0
 # Whether to serve client side assets using webpack-dev-middleware middleware
 # instead of /dist.
 WEBPACK_DEV_SERVER=true
+
+# http://openweathermap.org/forecast5
+OPEN_WEATHER_APP_ID=

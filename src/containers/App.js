@@ -24,7 +24,7 @@ class App extends Component {
 }
 
 App.fetchData = function({ dispatch }) {
-    return dispatch(fetchPostsIfNeeded());
+    return dispatch(() => Promise.resolve());
 };
 
 function mapStateToProps(state) {
