@@ -1,0 +1,14 @@
+.root {
+    color: #545454;
+}
+
+.date {
+    display: block;
+    font-size: 20px;
+    margin: 0 0 0.5em;
+}
+
+.temp {
+    display: block;
+    font-size: 40px;
+}

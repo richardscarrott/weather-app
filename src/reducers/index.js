@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import posts from './posts';
+import weather from './weather/weather';
 
 const rootReducer = combineReducers({
-    posts,
+    weather,
     routing: routerReducer
 });
 

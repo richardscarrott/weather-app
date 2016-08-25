@@ -1,0 +1,16 @@
+.root {
+    width: 90%;
+    margin: 30px auto 0;
+    max-width: 500px;
+    padding: 20px;
+    /* WOULDDO: CSS variables */
+    box-shadow: 0 0 120px #d3d3d3;
+}
+
+.module {
+    margin: 0 0 20px;
+}
+
+.module:last-child {
+    margin: 0;
+}

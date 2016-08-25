@@ -1,13 +1,12 @@
 import React from 'react';
-import { Route, IndexRoute, Redirect } from 'react-router';
-import App from './containers/App';
-import Index from './components/Index';
-import NotFound from './components/NotFound';
+import { Route, IndexRoute } from 'react-router';
+import App from './components/app/App';
+import Weather from './components/weather/Weather';
+import NotFound from './components/notfound/Notfound';
 
 export default (
     <Route path="/" component={App}>
-        <IndexRoute component={Index} />
-        <Redirect from="foo" to="/" />
+        <IndexRoute component={Weather} />
         <Route path="*" component={NotFound} />
     </Route>
 );

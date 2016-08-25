@@ -1,11 +1,12 @@
 import 'css-reset';
+import './reset.css';
 import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
-import Root from './containers/Root';
+import Root from './components/root/Root';
 import configureStore from './store/configureStore';
 
 const store = configureStore(window.__INITIAL_STATE__);
@@ -20,8 +21,8 @@ render(
 
 /* eslint-disable */
 if (module.hot) {
-    module.hot.accept('./containers/Root', () => {
-        const NextRoot = require('./containers/Root').default;
+    module.hot.accept('./components/root/Root', () => {
+        const NextRoot = require('./components/root/Root').default;
         render(
             <AppContainer>
                 <NextRoot store={store} history={history} />

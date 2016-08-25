@@ -1,0 +1,35 @@
+.root {
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.day {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    border-left: none;
+    padding: 10px 5px;
+    cursor: pointer;
+    color: #545454;
+}
+
+.day:first-child {
+    border-left: 1px solid #d3d3d3;
+}
+
+.label {
+    display: block;
+    text-transform: uppercase;
+    margin: 0 0 0.5em;
+}
+
+.high {
+    display: block;
+    margin: 0 0 0.2em;
+}
+
+.low {
+    display: block;
+    color: #d3d3d3;
+}

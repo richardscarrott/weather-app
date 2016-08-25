@@ -1,0 +1,8 @@
+.root {
+    width: 100%;
+}
+
+.root[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+}

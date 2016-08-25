@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run build",
     "start": "npm run serve",
     "build": "node ./tasks/build",
     "serve": "node ./server",
@@ -39,7 +40,7 @@
     "progress-bar-webpack-plugin": "^1.6.0",
     "react-hot-loader": "^3.0.0-beta.1",
     "require-from-string": "^1.2.0",
-    "simple-define-webpack-plugin": "git+ssh://git@github.com:richardscarrott/simple-define-webpack-plugin.git#master",
+    "simple-define-webpack-plugin": "https://github.com/richardscarrott/simple-define-webpack-plugin.git#master",
     "stats-webpack-plugin": "^0.3.1",
     "strip-json-comments": "^2.0.1",
     "strip-loader": "^0.1.2",
@@ -51,9 +52,10 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.13.0",
+    "classnames": "^2.2.5",
     "colors": "^1.1.2",
     "compression": "^1.6.2",
-    "css-reset": "git+ssh://git@github.com/60frames/css-reset.git#1.0.0",
+    "css-reset": "https://github.com/60frames/css-reset.git#1.0.0",
     "debug": "^2.2.0",
     "express": "^4.14.0",
     "isomorphic-fetch": "^2.2.1",
@@ -69,7 +71,6 @@
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
-    "redux-thunk": "^2.1.0",
-    "simple-define-webpack-plugin": "git+ssh://git@github.com/richardscarrott/simple-define-webpack-plugin.git#master"
+    "redux-thunk": "^2.1.0"
   }
 }

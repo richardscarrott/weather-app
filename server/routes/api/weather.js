@@ -36,14 +36,13 @@ function format(json) {
 }
 
 router.get('/forecast/:country/:city', (req, res, next) => {
-    return res.json(format(require('./weather-mock.json')));
-    // fetch(`${API_ENDPOINT}/forecast?q=${req.params.country},${req.params.city}&mode=json&units=metric&appid=${config.OPEN_WEATHER_APP_ID}`)
-    //     .then(response => response.json())
-    //     .then(format)
-    //     .then(
-    //         result => res.json(result),
-    //         err => next(err)
-    //     );
+    fetch(`${API_ENDPOINT}/forecast?q=${req.params.country},${req.params.city}&mode=json&units=metric&appid=${config.OPEN_WEATHER_APP_ID}`)
+        .then(response => response.json())
+        .then(format)
+        .then(
+            result => res.json(result),
+            err => next(err)
+        );
 });
 
 module.exports = router;
