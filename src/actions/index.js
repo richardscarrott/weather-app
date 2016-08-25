@@ -1,8 +1,12 @@
-import fetch from '../utils/fetch';
+import * as weatherApi from '../api/weather/weather';
 
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE';
+
+if (process.env.BROWSER) {
+    window.weatherApi = weatherApi;
+}
 
 function fetchPostsFailure(error) {
     return {
@@ -24,7 +28,7 @@ function fetchPosts() {
         dispatch({
             type: FETCH_POSTS
         });
-        return fetch(`${process.env.API_ENDPOINT}/posts`)
+        return weatherApi.fetchForecast()
             .then(
                 data => dispatch(fetchPostsSuccess(data)),
                 error => dispatch(fetchPostsFailure(error))
