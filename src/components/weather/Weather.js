@@ -21,18 +21,27 @@ class Weather extends Component {
     }
 
     render() {
-        const { activeHour, activeDay, days, onForecastDayChange, onForecastHourChange } = this.props;
-        const time = activeHour.dt;
-        const minTime = activeDay.hourly[0];
-        const maxTime = activeDay.hourly[activeDay.hourly.length - 1];
-        return (
-            <div className={styles.root}>
-                <Helmet title="Weather Forecast" />
-                {activeHour ? <Hour {...activeHour} className={styles.module} /> : null}
-                <HourPicker time={time} minTime={minTime} maxTime={maxTime} onChange={onForecastHourChange} className={styles.module} />
-                {days.length ? <Days days={days} onDayClick={onForecastDayChange} className={styles.module} /> : null}
-            </div>
-        );
+        const { activeHour, activeDay, days, onForecastDayChange, onForecastHourChange, isFetching, error } = this.props;
+
+        if (isFetching) {
+            return (<div className={styles.root}>Loading...</div>);
+        } else if (error) {
+            return (<div className={styles.root}>Error...</div>);
+        } else if (activeHour) {
+            const time = activeHour.dt;
+            const minTime = activeDay.hourly[0];
+            const maxTime = activeDay.hourly[activeDay.hourly.length - 1];
+            return (
+                <div className={styles.root}>
+                    <Helmet title="Weather Forecast" />
+                    {activeHour ? <Hour {...activeHour} className={styles.module} /> : null}
+                    <HourPicker time={time} minTime={minTime} maxTime={maxTime} onChange={onForecastHourChange} className={styles.module} />
+                    {days.length ? <Days days={days} onDayClick={onForecastDayChange} className={styles.module} /> : null}
+                </div>
+            );
+        }
+
+        return null;
     }
 }
 
