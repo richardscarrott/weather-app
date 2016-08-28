@@ -3,9 +3,6 @@ import moment from 'moment';
 import classNames from 'classnames';
 import styles from './Hour.css';
 
-// WOULDDO: Add weather icons
-// WOULDDO: Add location!
-
 function Hour({ dt, main: { temp }, className }) {
     return (
         <div className={classNames(styles.root, className)}>

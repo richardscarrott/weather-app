@@ -12,7 +12,6 @@ days.define({
     hourly: arrayOf(hours)
 });
 
-// TODO: Move defaults from here to env vars?
 export function fetchForecast(country = 'uk', city = 'london') {
     return fetch(`${process.env.API_ENDPOINT}/weather/forecast/${country}/${city}`)
         .then(response => normalize(response, arrayOf(days)));

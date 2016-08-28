@@ -3,11 +3,6 @@ import moment from 'moment';
 import classNames from 'classnames';
 import styles from './Days.css';
 
-// WOULDDO: Wrap moment into smaller API, at the very least to try and avoid any
-// unix seconds vs unix milliseconds bugs..i.e. calling utc() everywhere is easy
-// to forget.
-
-// WOULDDO: Make each day a separate component.
 function Days({ days, onDayClick, className }) {
     return (
         <div className={classNames(styles.root, className)}>

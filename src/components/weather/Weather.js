@@ -8,11 +8,6 @@ import Hour from './hour/Hour';
 import HourPicker from './hourpicker/HourPicker';
 import styles from './Weather.css';
 
-// WOULDDO: Define propTypes!
-// WOULDDO: Design component API with more defined SoC
-// WOULDDO: Loading spinner
-// WOULDDO: Error / Retry component
-
 class Weather extends Component {
 
     componentDidMount() {
@@ -51,11 +46,6 @@ Weather.fetchData = ({ dispatch }) => {
 
 const EMPTY_DAYS = [];
 
-// WOUDDO: Write unit tests, jest, snapshots, scalable.
-
-// WOULDDO: use 'selectors' and memoize this with 'reselect' or similar lib to
-// ensure the compution of derived data doesn't cause this component to re-render
-// even if it hasn't technically changed.
 function mapStateToProps(state) {
     const { weather: { forecast } } = state;
     const { isFetching, error, active, data } = forecast;
